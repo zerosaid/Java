@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENERADOR DE TABLA DE AMORTIZACIÓN PRÉSTAMO CON INTERÉS SIMPLE</title>
+    <style>
+    body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        color: #007BFF;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: bold;
+    }
+
+    form input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    form button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1.5px solid black;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 30px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Amortización con Interés Simple</h1>
+    <form id="formulario">
+        <label>Monto del crédito: <input type="number" id="monto" required></label><br>
+        <label>Tasa de interés anual (%): <input type="number" id="interes" step="0.01" required></label><br>
+        <label>Número de pagos (mensuales): <input type="number" id="pagos" required></label><br>
+        <button type="submit">Generar tabla</button>
+    </form>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Cuota</th>
+                <th>Valor Total</th>
+                <th>Capital</th>
+                <th>Interés</th>
+                <th>Total Acumulado</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+    <script src="funciones.js"></script>
+</body>
+</html>
