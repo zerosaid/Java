@@ -16,6 +16,18 @@ function agregarProducto() {
 
 function eliminarProducto() {
     const nombre = document.getElementById('buscarNombre').value.toLowerCase();
+    const index = inventario.findIndex(p => p.nombre.toLowerCase() === nombre);
+    
+    if (index !== -1) {
+        inventario.splice(index, 1);
+        actualizarTabla();
+    } else {
+        alert("Producto no encontrado.");
+    }
+}
+
+function comprarPrducto() {
+    const nombre = document.getElementById('buscarNombre').value.toLowerCase();
     const producto = inventario.find(p => p.nombre.toLowerCase() === nombre);
 
     if (producto) {
