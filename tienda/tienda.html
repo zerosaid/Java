@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="icon" href="bolsa-de-la-compra.png">
+    <link rel="stylesheet" href="tienda.css">
+</head>
+<body>
+    <h1>Gestión de Inventario</h1>
+
+    <section id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre del producto">
+        <input type="number" id="precio" placeholder="Precio" min="100">
+        <input type="number" id="cantidad" placeholder="Cantidad" min="1" max="250">
+        <button onclick="agregarProducto()">Agregar producto</button>
+    </section>
+
+    <section id="acciones">
+        <input type="text" id="buscarNombre" placeholder="Nombre a buscar/eliminar">
+        <button onclick="buscarProducto()">Buscar</button>
+        <button onclick="eliminarProducto()">Eliminar</button>
+    </section>
+
+    <section id="inventario">
+        <h2>Inventario</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="tablaInventario">
+            </tbody>
+        </table>
+    </section>
+
+    <script src="tienda.js"></script>
+</body>
+</html>
