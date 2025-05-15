@@ -28,3 +28,5 @@ console.log(cadena)
 console.log("*".repeat(20));
 const persona2= JSON.parse(cadena);
 console.log(persona2)
+
+

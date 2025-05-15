@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo FormDATA</h1>
+    <br><hr><br>
+
+    
+    <br>    
+    <button onclick="f1()">Odtener valores</button><br><br>
+    <button onclick="f2()">funcion 2</button><br><br>
+    <button onclick="f3()">funcion 3</button><br><br>
+
+
+    <form action="">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre"><br><hr><br>
+        <label for="edad">Edad: </label>
+        <input type="number" name="edad" id="edad" min="18" max="60"><br><hr><br>
+        <label for="telefono">Telefono: </label>
+        <input type="tel" name="telefono" id="telefono"><br><hr><br>
+    </form>
+</body>
+    <script>
+        const form = document.querySelector("form");
+
+        function f1(){
+            console.log(form);
+            const datosForm = new FormData(form);
+            console.log(datosForm)
+            alert(datosForm.get("nombre"))
+
+            const datos = Object.fromEntries(datosForm);
+            alert(datos.telefono);
+        }
+
+        const f2 = function() {alert("f2"); }
+
+        const f3 = ()=> alert("f3");
+    </script>
+</html>
