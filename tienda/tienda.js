@@ -16,15 +16,21 @@ function agregarProducto() {
 
 function eliminarProducto() {
     const nombre = document.getElementById('buscarNombre').value.toLowerCase();
-    const index = inventario.findIndex(p => p.nombre.toLowerCase() === nombre);
-    
-    if (index !== -1) {
-        inventario.splice(index, 1);
+    const producto = inventario.find(p => p.nombre.toLowerCase() === nombre);
+
+    if (producto) {
+        if (producto.cantidad > 1) {
+            producto.cantidad -= 1;
+        } else {
+            const index = inventario.findIndex(p => p.nombre.toLowerCase() === nombre);
+            inventario.splice(index, 1);
+        }
         actualizarTabla();
     } else {
         alert("Producto no encontrado.");
     }
 }
+
 
 function buscarProducto() {
     const nombre = document.getElementById('buscarNombre').value.toLowerCase();
