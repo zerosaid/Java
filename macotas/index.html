@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾My Pet🐾</title>
+</head>
+<body>
+    <h1>🐱🐾My Pet🐾🐶</h1>
+    <br><hr><br>
+
+    <br>    
+    
+<form id="formDueño">
+    <label>Nombre: <input type="text" name="nombre" required></label><br>
+    <label>Cédula: <input type="number" name="cedula" required></label><br>
+    <label>Teléfono: <input type="tel" name="telefono" required></label><br>
+    <label>Correo: <input type="email" name="correo" required></label><br>
+  </form>
+  <button onclick="f1()">Guardar Dueño</button><br><br>
+
+  <form id="formMascota">
+    <label>Nombre Mascota: <input type="text" name="nombre2" required></label><br>
+    <label>Especie: 
+      <select name="especie" required>
+        <option>Perro</option>
+        <option>Gato</option>
+        <option>Ave</option>
+        <option>Reptil</option>
+        <option>Otro</option>
+      </select>
+    </label><br>
+    <label>Edad (años): <input type="number" name="edad" required></label><br>
+    <label>Peso (kg): <input type="number" name="peso" required></label><br>
+    <label>Estado de salud: 
+      <select name="salud" required>
+        <option>Sano</option>
+        <option>Enfermo</option>
+        <option>En tratamiento</option>
+      </select>
+    </label><br>
+  </form>
+  <button onclick="f2()">Guardar Mascota</button><br><br>
+  
+  <button onclick="f3()">Mostrar Dueños y Mascotas</button>
+  <div id="tablaDatos"></div>
+  
+    
+</body>
+<script src="script.js"></script>
+</html>
