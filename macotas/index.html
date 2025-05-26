@@ -66,6 +66,26 @@
     </ul>
   </div>
 
+<!-- Firebase App (core SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<!-- Firebase Database -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "TU_API_KEY",
+    authDomain: "mypet-728fd.firebaseapp.com",
+    databaseURL: "https://mypet-728fd-default-rtdb.firebaseio.com",
+    projectId: "mypet-728fd",
+    storageBucket: "mypet-728fd.appspot.com",
+    messagingSenderId: "TU_SENDER_ID",
+    appId: "TU_APP_ID"
+  };
+
+  // Inicializar Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+</script>
 
   <script src="script.js"></script>
 </body>
