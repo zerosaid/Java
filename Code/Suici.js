@@ -19,22 +19,28 @@ do {
       switch (opc2) {
         case 1:
           alert("El arma se encasquillo");
+          break;
         case 2:
           alert("La cuerda se rompio");
+          break;
         case 3:
           alert("Las pastillas estan caducadas");
           break;
         case 4:
           alert("Esto no es odjeto o pastel, intenta otra cosa");
+          break;
         case 5:
           alert("No hay gasolina en todo el pais es una pena, no te atropellaron.");
+          break;
         case 6:
           alert("Justo paso un camion de colchones y te salvaste de milagro, te dejaron en una gasolinera cercana y te dieron una rosquilla");
+          break;
         case 7:
           alert("Chebre ahora vete");
           break;
         default:
           alert("Elige una de las opciones presentadas.");
+          break;
       }
       break;
     case 2:
