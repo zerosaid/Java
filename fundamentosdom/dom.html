@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- odtener por id -->
+    <p id="pregunta-sofia">¿Donde esta Sofia?</p>
+    <button onclick="responderPreguntaSofia()">Responda la pregunta</button>
+
+    <!-- odtener por clase -->
+    <p class="camper">Brayan</p>
+    <p class="camper">Nicolas</p>
+    <button onclick="cambiarColorCamper()">Cambiar estilo</button>
+
+    <!-- por tipo -->
+    <h3>Lista de mercado</h3>
+    <ul>
+        <li>Manzana</li>
+        <li>Arroz</li>
+        <li>Frijol</li>
+    </ul>
+    <button onclick="chekearListaMercado()">Chekear Lista</button>
+
+    <!-- odtener por selector -->
+    <p class="bienvenida">BIenvenidos al DOM C3</p>
+    <p class="bienvenida">BIenvenidos al DOM C3 2</p>
+    <button onclick="cambiarBienvenida()">Cambiar bienvenida</button>
+
+    <!-- Obtener atributos -->
+    <hr>
+    <img class="imagen-gato" src="./gato.jpeg" alt="gato" width="30%">
+    <button onclick="verAlt()">Capturar alt</button>
+    <button onclick="cambiarimagen()">Cambiar imagen</button>
+    <button onclick="verAtributos()">Ver atributos</button>
+
+    <script src="./dom.js"></script>
+</body>
+</html>
