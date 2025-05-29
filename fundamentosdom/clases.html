@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .resaltado {
+            background-color: yellow;
+            text-decoration: underline;
+        }
+        .resaltado-dos {
+            background-color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="bienvenida" class="titulo encabezado">Bienvenidos a JS</h1>
+
+    <button onclick="resaltar()">resaltar</button>
+    <button onclick="resaltarSegundaForma()">resaltar segunda forma</button>
+    <button onclick="cambiarResaltado()">Cambie color de resaltado a azul</button>
+    <hr>
+    <p id="parrafo">Esto es un texto</p>
+    <div id="contenedor">
+        <h1>Hola a todos</h1>!
+    </div>
+
+    <script>
+        var elemento = document.getElementById("bienvenida");
+        var clases = elemento.classList;
+
+        console.log(clases)
+        console.log(clases.length)
+        console.log(clases.item(1))
+        console.log(clases.contains("titulo"))
+
+        function resaltar(){
+            if(clases.contains("resaltado")){
+                clases.remove("resaltado")
+            }else{
+                clases.add("resaltado")
+            }
+            
+        }
+
+        function resaltarSegundaForma(){
+            clases.toggle("resaltado")
+        }
+
+        function cambiarResaltado(){
+            clases.replace("resaltado", "resaltado-dos")
+        }
+
+        var parrafo = document.getElementById("parrafo");
+        var nodo = parrafo.nodeName;
+        console.log(nodo);
+        parrafo.textContent = "<li>Esto es un parrafo</li>"
+
+        var contenedor = document.getElementById("contenedor");
+        console.log(contenedor.outerHTML)
+    </script>
+</body>
+</html>
