@@ -1,0 +1,32 @@
+<br><br>
+Centígrados: <input type="number" id="centigrados">
+<br><br>
+Fahrenheit: <input type="number" id="farenheit">
+<br><br>
+<button onclick="convertir()">Convertir</button>
+
+<script>
+    let campoActivo = "";
+
+    document.getElementById("centigrados").addEventListener("focus", () => {
+        campoActivo = "centigrados";
+    });
+
+    document.getElementById("farenheit").addEventListener("focus", () => {
+        campoActivo = "farenheit";
+    });
+
+    function convertir() {
+        const c = document.getElementById("centigrados").value;
+        const f = document.getElementById("farenheit").value;
+
+        if (campoActivo === "centigrados" && c !== "") {
+            const resultado = (parseFloat(c) * 9 / 5) + 32;
+            document.getElementById("farenheit").value = resultado.toFixed(2);
+        } else if (campoActivo === "farenheit" && f !== "") {
+            const resultado = (parseFloat(f) - 32) * 5 / 9;
+            document.getElementById("centigrados").value = resultado.toFixed(2);
+        }
+    }
+</script>
+

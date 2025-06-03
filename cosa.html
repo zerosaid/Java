@@ -1,0 +1,65 @@
+<div id="miElemento" class="clase1 clase2">Contenido del Elemento</div>
+
+<button onclick="contarClases()">Cantidad de clases</button>
+<br><br>
+<button onclick="agregarClase()">Agregar Clase</button>
+<br><br>
+<button onclick="classNPos(0)">Clase en la 1ra posición</button>
+<br><br>
+<button onclick="existeClase()">Validar si existe la clase</button>
+<br><br>
+<button onclick="removerClase()">Remover clases</button>
+<br><br>
+<button onclick="alternarClase()">Alternar clases</button>
+<br><br>
+<button onclick="remploazrClase()">Remplazar clases</button>
+
+<script>
+  const agregarClase = () => {
+    const elemento = document.getElementById('miElemento');
+    elemento.classList.add('nuevaClase');
+  }
+
+  const contarClases = () => {
+    const elemento = document.getElementById('miElemento');
+    const cant = elemento.classList.length;
+    alert('Cantidad de clases: ' + cant.toString());
+  }
+
+  const classNPos = () => {
+    const elemento = document.getElementById('miElemento');
+    const claseEnPosicion = elemento.classList.item(0);
+    alert('Clase en la posición 1: ' + claseEnPosicion);
+  }
+
+  const existeClase = () => {
+    const elemento = document.getElementById
+    ('miElemento');
+    const existeClase = elemento.classList.contains
+    ("nuevaClase");
+    alert('Existe la clase :' + existeClase);
+  }
+
+  const removerClase = () => {
+    const elemento = document.getElementById('miElemento');
+
+    const rta = elemento.classList.remove('clase2', 'remover', 'clase');
+    alert('¿Se removió al menos una clase?: ' + rta);
+}
+
+  const alternarClase = () => {
+    const elemento = document.getElementById('miElemento')
+
+    const rta = elemento.classList.toggle('nuevaClase');
+    alert('respuesta de alternar clase: ' + rta)
+  }
+
+  const remploazrClase = () => {
+    const elemento = document.getElementById('miElemento');
+
+    const rta = elemento.classList.replace('nuevaClase', 'claseReemplazo');
+    alert('respuesta de alternar clase: ' + rta)
+  }
+</script>
+
+''

@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div class="parent">
+        <p class="message2">Hola a todos</p>
+        <p class="message">Hola, soy todo un Camper</p>
+    </div>
+</div>
+<input type="text" id="new-message2">
+<input type="text" id="new-message">
+<br><br>
+<button id="change-message2" onclick="cambiarMensaje2()">Cambiar mensaje</button>
+<br><br>
+<button id="change-message" onclick="cambiarMensaje()">Cambiar mensaje</button>
+<br><br>
+<button onclick="obtenerId()">Obtener nombre de elemento div</button>
+<br><br>
+<button onclick="innerDiv()">Inner div</button>
+<br><br>
+<button onclick="outerDiv()">Outer div</button>
+<br><br>
+<button onclick="setHTML()">Set HTML</button>
+
+<script>
+    function cambiarMensaje(){
+        const messageElement = document.querySelector(".message");
+        const newMessage = document.getElementById("new-message").value;
+        messageElement.textContent=newMessage;
+    }
+
+    function cambiarMensaje2(){
+        const messageElement = document.querySelector(".message2");
+        const newMessage = document.getElementById("new-message2").value;
+        messageElement.textContent=newMessage;
+    }
+
+    const obtenerId = () =>{
+        const element = document.querySelector(".message");
+        alert(element.nodeName);
+    }
+
+    const innerDiv = () =>{
+        const element = document.querySelector(".container");
+        alert(element.innerHTML);
+    }
+
+    const outerDiv = () => {
+        const element = document.querySelector(".container");
+        alert(element.outerHTML);
+    }
+
+</script>
+
+    
+  
