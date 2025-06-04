@@ -27,7 +27,7 @@ async function pelear() {
 }
 
 async function obtenerPokemonAleatorio() {
-    const id = Math.floor(Math.random() * 806) + 1;
+    const id = Math.floor(Math.random() * 1025) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json();
 
