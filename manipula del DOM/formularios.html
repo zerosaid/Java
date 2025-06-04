@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar y Eliminar DIVs</title>
+  <style>
+    .textoRojo {
+      color: red;
+    }
+
+    .container {
+      border: 1px solid blue;
+      padding: 10px;
+    }
+
+    .parent {
+      border: 1px solid mediumorchid;
+      margin: 10px;
+    }
+
+    .parrafo {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="parent">
+      <p>Hola a todos.</p>
+      <p class="message">Hola, soy todo un Camper</p>
+    </div>
+  </div>
+
+  <button id="change-message" onclick="agregarElemento()">Agregar div</button>
+  <br><br>
+  <button onclick="eliminarElemento()">Eliminar Div</button>
+  <br><br>
+  <button onclick="reemplazar()">Reemplazar div</button>
+  <br><br>
+  <button onclick="reemplazarElemento()">Reemplazar Párrafo</button>
+  <br><br>
+  <button onclick="insertarElement()">Insertar Parrafo</button>
+  <br><br>
+  <button onclick="insertarElementNull()">Insertar Parrafo (new, null)</button>
+  <br><br>
+
+
+  <script>
+    let cant = 0;
+
+    function insertarElement() {
+        const element = document.querySelector(".container");
+        const pNuevo = document.createElement("p");
+        pNuevo.innerHTML = `<span style="color:tomato">Nuevo párrafo</span><br><br>`;
+        element.appendChild(pNuevo);
+      }
+
+    function insertarElementNull() {
+        const element = document.querySelector(".container");
+        const pNuevo = document.createElement("p");
+        pNuevo.innerHTML = `<span style="color:tomato">Nuevo párrafo</span><br><br>`;
+        element.appendChild(pNuevo);
+      }
+
+      function reemplazarElemento() {
+        const element = document.querySelector(".parent"); // padre
+        const parrafo = document.querySelector(".message"); // hijo actual
+
+        alert(parrafo.outerHTML); // muestra lo que se va a reemplazar
+
+        // nuevo nodo <p>
+        const pNuevo = document.createElement("p");
+        pNuevo.innerHTML = `<span style="color:tomato">Nuevo párrafo</span><br><br>`;
+
+        // reemplazo
+        element.replaceChild(pNuevo, parrafo);
+      }
+
+    function reemplazar() {
+      const padre = document.querySelector(".container");
+      const nuevoNodo = document.createElement("div");
+      nuevoNodo.innerHTML = `<p class='parrafo'><span class='textoRojo'>Este es un nuevo DIV reemplazado</span></p>`;
+
+      const divs = document.querySelectorAll(".container div");
+      const ultimo = divs[divs.length - 1];
+
+      if (divs.length > 1) {
+        padre.replaceChild(nuevoNodo, ultimo);
+      } else {
+        alert("No hay suficiente contenido para reemplazar.");
+      }
+  }
+
+
+    function eliminarElemento() {
+      console.log("Entré");
+      const cantDivs = document.querySelectorAll(".container div").length;
+      alert(cantDivs);
+
+      if (cantDivs > 1) {
+        const padre = document.querySelector(".container");
+        const div = document.querySelectorAll(".container div")[cantDivs - 1];
+        alert(div.outerHTML);
+        padre.removeChild(div);
+        --cant;
+      }
+    }
+
+    function agregarElemento() {
+      const element = document.querySelector(".container");
+      const div = document.createElement("div");
+      div.setHTML = `<p onclick="alert('Mensaje : ${cant}')" class='parrafo'><span class='textoRojo'>DIV con Nuevo elemento ${cant}</span><br></p>`;
+      div.innerHTML = `<p onclick="alert('Mensaje : ${cant}')" class='parrafo'><span class='textoRojo'>DIV con Nuevo elemento ${cant}</span><br><br></p>`;
+      element.appendChild(div);
+      ++cant;
+    }
+    
+  </script>
+
+</body>
+</html>
