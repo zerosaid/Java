@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuadrado Aleatorio</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    #contenedor {
+      position: relative;
+      width: 90vw;
+      height: 80vh;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    #cuadrado {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background-color: purple;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .instruccion {
+      background: #333;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Cuadrado aleatorio</h2>
+  <div class="instruccion">Intenta atrapar el cuadrado</div>
+
+  <div id="contenedor">
+    <div id="cuadrado"></div>
+  </div>
+
+  <script>
+    const cuadrado = document.getElementById("cuadrado");
+    const contenedor = document.getElementById("contenedor");
+
+    function moverCuadrado() {
+      const maxX = contenedor.clientWidth - cuadrado.offsetWidth;
+      const maxY = contenedor.clientHeight - cuadrado.offsetHeight;
+
+      const nuevaX = Math.floor(Math.random() * maxX);
+      const nuevaY = Math.floor(Math.random() * maxY);
+
+      const colorAleatorio = `hsl(${Math.floor(Math.random() * 360)}, 70%, 40%)`;
+
+
+      cuadrado.style.left = nuevaX + "px";
+      cuadrado.style.top = nuevaY + "px";
+      cuadrado.style.backgroundColor = colorAleatorio;
+    }
+
+    cuadrado.addEventListener("mouseenter", moverCuadrado);
+
+    window.onload = moverCuadrado;
+  </script>
+</body>
+</html>
