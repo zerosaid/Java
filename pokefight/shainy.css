@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    text-align: center;
+    padding: 30px;
+    color: #333;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2c3e50;
+}
+
+.pelear {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ffb8b8;
+    border: solid 2px #ff4d4d;
+    color: red;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.mypokebuton {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4d94ff;
+    background-attachment: fixed;
+    border: solid 2px #0b5ed7;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.cpupokebuton {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #c3ff92;
+    border: solid 2px #0bf876;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.boton-centro {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pelear:hover {
+    background-color: #f57c7c;
+}
+.mypokebuton:hover {
+    background-color: #3071d1;
+}
+
+.mypoke {
+    text-align: center;
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    color: #0b5ed7;
+}
+.cpupoke {
+    text-align: center;
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    color: #009141;
+}
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: #020202 solid 1px;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+ol li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.perdio {
+    background-color: #ffcccc !important;
+    border: 2px solid red;
+    transition: all 0.3s ease;
+}
+
+.gano {
+    background-color: #ccffcc !important;
+    border: 2px solid green;
+    transition: all 0.3s ease;
+}
