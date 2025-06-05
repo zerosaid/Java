@@ -1,6 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     text-align: center;
     padding: 30px;
     color: #333;
@@ -9,11 +11,33 @@ body {
 h3 {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #2c3e50;
+    text-align: center;
+    color: #0b5ed7;
+    margin: 30px auto;
+    padding: 15px 25px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    display: block;
+    width: fit-content;
+    max-width: 90%;
+    opacity: 0.5;
 }
+
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+    z-index: -1;
+    opacity: 0.8;
+}
+
 
 .pelear {
     padding: 10px 20px;
@@ -63,6 +87,7 @@ h3 {
 .pelear:hover {
     background-color: #f57c7c;
 }
+
 .mypokebuton:hover {
     background-color: #3071d1;
 }
@@ -75,9 +100,11 @@ h3 {
     margin: 20px;
     padding: 15px;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.85);
     color: #0b5ed7;
+    backdrop-filter: blur(4px);
 }
+
 .cpupoke {
     text-align: center;
     display: inline-block;
@@ -86,9 +113,12 @@ h3 {
     margin: 20px;
     padding: 15px;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.85);
     color: #009141;
+    backdrop-filter: blur(4px);
 }
+
+
 img {
     width: 150px;
     height: 150px;
@@ -119,4 +149,91 @@ ol li {
     background-color: #ccffcc !important;
     border: 2px solid green;
     transition: all 0.3s ease;
+}
+
+.resultado-ganar {
+    color: goldenrod;
+    border: 2px solid goldenrod;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #fffbe6;
+}
+
+.resultado-empate {
+    color: salmon;
+    border: 2px solid salmon;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #fff0f0;
+}
+
+.resultado-perder {
+    color: red;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #ffe5e5;
+}
+
+@media (max-width: 460px) {
+    body {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 20px;
+        padding: 10px 15px;
+        letter-spacing: 1px;
+        margin: 20px auto;
+        opacity: 0.8;
+        max-width: 100%;
+        width: auto;
+    }
+
+    .mypoke,
+    .cpupoke {
+        width: 90%;
+        display: block;
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 8px;
+    }
+
+    ol li {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    .pelear,
+    .mypokebuton,
+    .cpupokebuton {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px 15px;
+        margin: 8px auto;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    .boton-centro {
+        margin-top: 20px;
+    }
+
+    #resultado {
+        font-size: 18px;
+        padding: 8px 15px;
+        max-width: 90%;
+        margin: 20px auto 0 auto;
+        display: block !important;
+        box-sizing: border-box;
+    }
 }

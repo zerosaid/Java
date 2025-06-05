@@ -13,6 +13,13 @@ miPokeBtn.addEventListener('click', async () => {
 });
 
 async function pelear() {
+    miPokeDiv.classList.remove('gano', 'perdio');
+    cpuPokeDiv.classList.remove('gano', 'perdio');
+
+    const divResultado = document.getElementById('resultado');
+    divResultado.style.display = 'none';
+    divResultado.textContent = '';
+
     if (!miPoke) {
         alert("¡Primero elige tu Pokémon!");
         return;
@@ -25,6 +32,7 @@ async function pelear() {
         iniciarPelea(miPoke, cpuPoke);
     }, 5000);
 }
+
 
 async function obtenerPokemonAleatorio() {
     const id = Math.floor(Math.random() * 1025) + 1;
@@ -85,8 +93,19 @@ function iniciarPelea(p1, p2) {
     }
 
     const divResultado = document.getElementById('resultado');
+    divResultado.className = '';
     divResultado.style.display = 'block';
+
+    if (resultado === "¡GANASTE!") {
+        divResultado.classList.add('resultado-ganar');
+    } else if (resultado === "Perdiste...") {
+        divResultado.classList.add('resultado-perder');
+    } else {
+        divResultado.classList.add('resultado-empate');
+    }
+
     divResultado.textContent = resultado;
+
 }
 
 

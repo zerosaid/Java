@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,14 @@
     <link rel="icon" href="./juegos.png" type="image/png">
     <link rel="stylesheet" href="./shainy.css">
 </head>
+
 <body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="./gift.mp4" type="video/mp4">
+        Tu navegador no soporta el video de fondo.
+    </video>
+
     <h3>CLUD DE LA PELEA POKEMON</h3>
 
     <div class="mypoke">
@@ -21,7 +29,7 @@
             <li>Speed: </li>
         </ol>
     </div>
-    
+
     <div class="cpupoke">
         <button class="cpupokebuton">CPU Pokemon</button>
         <img src="" alt="">
@@ -38,9 +46,11 @@
         <button class="pelear" onclick="pelear()">Fight</button>
     </div>
 
-    <div id="resultado" style="display:none; font-size: 24px; text-align: center; margin-top: 20px;"></div>
+    <div id="resultado"
+        style="display:none; font-size: 24px; text-align: center; margin-top: 20px; border-color: goldenrod;"></div>
 
 
     <script src="./poke.js"></script>
 </body>
+
 </html>
