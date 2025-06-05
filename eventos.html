@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Haz clic para cambiar el color de fondo</h1>
+    <button id="changeColorButton">Cambiar color</button>
+
+    <h1>Ejemplo de eventos</h1>
+    <hr>
+
+    <button id="boton">Eventos del botón</button>
+    <button id="saludar">Saludar</button>
+
+    <h1>Escribe algo y presiona el botón</h1>
+
+    <input type="text" id="campo" placeholder="Escribe aquí" />
+    <button id="mostrarTexto">Mostrar texto</button>
+    <p id="resultado"></p>
+
+
+</body>
+<script>
+    const botonEventos = document.getElementById("boton");
+
+    botonEventos.onclick = () => alert("Has presionado el botón");
+
+    botonEventos.addEventListener("mouseover", () => {
+        const h1 = document.querySelector("h1");
+        h1.style.color = "tomato";
+    });
+
+    botonEventos.addEventListener("mouseout", () => {
+        const h1 = document.querySelector("h1");
+        h1.style.color = "blue";
+    });
+
+    const botonSaludar = document.getElementById("saludar");
+
+    botonSaludar.addEventListener("click", () => {
+        alert("¡Hola, Daniel!");
+    });
+
+    const button = document.getElementById('changeColorButton');
+
+    const changeBackgroundColor = () => {
+        document.body.style.backgroundColor = getRandomColor();
+    };
+
+    button.setAttribute('onclick', 'changeBackgroundColor()');
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    const campo = document.getElementById("campo");
+    const resultado = document.getElementById("resultado");
+    const boton = document.getElementById("mostrarTexto");
+
+    boton.addEventListener("click", () => {
+        resultado.textContent = `Has escrito: ${campo.value}`;
+    });
+
+</script>
+
+</html>
