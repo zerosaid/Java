@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de isTrusted</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.1em;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: white;
+            min-width: 300px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Demostración de Event.isTrusted</h1>
+
+    <button id="miBoton">Haz clic aquí (Usuario)</button>
+    <button id="simularClick">Simular Clic (Programático)</button>
+
+    <div id="resultado">Esperando eventos...</div>
+</body>
+<script>
+    const miBoton = document.getElementById('miBoton');
+    const simularClickBoton = document.getElementById('simularClick');
+    const resultadoDiv = document.getElementById('resultado');
+
+    miBoton.addEventListener('click', event => {
+        console.log('Evento clic recibido');
+        console.log('isTrusted:', event.isTrusted);
+        resultadoDiv.textContent = "Evento clic: ¿De confianza? " + event.isTrusted;
+
+        if (event.isTrusted) {
+            window.open('https://www.campuslands.com/', '_blank', "whidth=400, height=300");
+        } else {
+            alert('El pop-up fue bloqueado porque el evento no es de confianza.');
+        }
+    });
+
+    simularClickBoton.addEventListener('click', () => {
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+
+        miBoton.dispatchEvent(clickEvent);
+    });
+</script>
+</html>
