@@ -1,0 +1,21 @@
+
+<h3>Uso de Template</h3>
+
+<template id="miTemplate">
+  <div class="card">
+    <h2>Título Template</h2>
+  </div>
+</template>
+
+<button onclick="addTemplate()">Agregar un template</button>
+
+<script>
+  function addTemplate() {
+    const miTemplate = document.getElementById("miTemplate");
+
+    const clon = miTemplate.content.cloneNode(true);
+
+    document.body.appendChild(clon);
+  }
+</script>
+

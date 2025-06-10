@@ -1,0 +1,30 @@
+<ul id="lista-dinamica">
+</ul>
+
+<button onclick="agregarItems()">Agregar elementos a la lista</button>
+
+<template id="template">
+  <li class="list">
+    <b>Nombre:</b> <span class="text-danger">info items...</span>
+  </li>
+</template>
+
+<script>
+  function agregarItems() {
+    const lista = document.getElementById("lista-dinamica");
+    const items = ["Item 1", "Item 2", "Item 3"];
+
+    const frag = document.createDocumentFragment();
+    const tmpl = document.querySelector("#template").content;
+
+    items.forEach(item => {
+      const clone = tmpl.cloneNode(true);
+      clone.querySelector("span").textContent = item;
+      frag.appendChild(clone);
+    });
+
+    lista.appendChild(frag);
+  }
+</script>
+
+  

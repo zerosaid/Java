@@ -1,0 +1,25 @@
+{
+  "posts": [],
+  "comments": [
+    {
+      "id": "1",
+      "body": "algun comentario",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "Funciona solo en escritorio",
+      "postId": 2
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode",
+      "id": "0122"
+    },
+    {
+      "name": "Campus Lands",
+      "id": "1d10"
+    }
+  ]
+}
