@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vaca Cowsay</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 20px;
+    }
+    pre {
+      font-size: 16px;
+      white-space: pre;
+    }
+    input {
+      margin-top: 10px;
+      padding: 5px;
+      font-family: monospace;
+    }
+    button {
+      margin-left: 5px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Vaca Cowsay 🐮</h1>
+
+<label for="mensaje">Escribe un mensaje:</label>
+<input type="text" id="mensaje" value="Hola mundo">
+<button onclick="mostrarMensaje()">Hablar</button>
+
+<pre id="cowsay"></pre>
+
+<script>
+    const vacas = [
+    // 1: Clásica
+    `
+        ^__^
+        (oo)\\_______
+        (__)\\       )\\/\\
+            (       )
+            ||----w |
+            ||     ||
+    `,
+   // 2: Acostada (estilo clásico)
+    `
+    ^__^
+    (oo)\\_______
+    (__)\\       )\\/\\
+        ||----w |
+    ____||_____||___
+    /            \\
+    /              \\
+    `,
+    // 3: Gritando (estilo clásico)
+    `
+            ^__^
+            (OO)\\_______   ¡MOOOO!
+            (__)\\       )\\/\\
+                (       )
+                ||----w |
+                ||     ||
+    `,
+    // 4: Hacker
+    `
+       (__)
+       (oo)\\_______
+       (__)\         )\\/\\
+           (        )
+           ||------||
+           || 0xC0 || 💻
+    `,
+    // 5: Dormida (estilo clásico)
+    `
+        (__)💭  zZ
+        (--)\\_______
+        (__)\\       )\\/\\
+            (       )
+            ||----w |
+            ||     ||
+    `,
+    // 6: Enfadada
+    `
+        (___)
+        (==╬)\\_______
+        (___)\\        )\\/\\
+             (        )
+             ||-----w |
+             ||      ||
+    `,
+    // 7: Romántica
+    `
+        (__)
+        (oo)\\________
+        (__)\\ ♥ ♥ ♥ ♥)\\/\\
+             (       )
+             ||----w |
+             ||     ||
+    `,
+    // 8: Zombie
+    `
+        (__)
+        (xx)\\_______
+        (__)\\       )\\/\\
+            (       )
+            ||----u |
+            ||     ||
+    `,
+    // 9: Vaca con gafas
+    `
+        (___)
+        (■_■)\\________
+        (___)\\        )\\/\\
+            (         )
+            ||------b |
+            ||       ||
+    `,
+    // 10: Espacial
+    `
+        (___)✨
+        (o o)\\________
+        (___)\\    🚀  )\\/\\
+            (         )
+            ||------w |
+            ||       ||
+    `
+  ];
+
+  function mostrarMensaje() {
+    const mensaje = document.getElementById("mensaje").value;
+    const borde = "-".repeat(mensaje.length + 2);
+    const burbuja = ` ${borde}\n< ${mensaje} >\n ${borde}`;
+
+    const vacaAleatoria = vacas[Math.floor(Math.random() * vacas.length)];
+
+    document.getElementById("cowsay").textContent = burbuja + "\n" + vacaAleatoria;
+  }
+
+  // Mostrar vaca por defecto al cargar
+  mostrarMensaje();
+</script>
+
+</body>
+</html>
